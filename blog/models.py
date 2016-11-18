@@ -10,9 +10,6 @@ class Pais(models.Model):
 class Year(models.Model):
     y = models.IntegerField()
 
-    def __str__(self):
-        return self.y
-
 class Editorial(models.Model):
     nombre = models.CharField(max_length=100)
 

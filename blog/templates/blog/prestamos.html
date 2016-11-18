@@ -1,0 +1,46 @@
+{%extends 'blog/base.html'%}
+{%block content%}
+<div class="row">
+  <div class="col s12 m6 offset-m3 l4 offset-l4">
+  <form method="post">{% csrf_token %}
+    {{ formulario.non_field_errors }}
+      <div class="row">
+        <div class="input-field">
+          {{ formulario.fecha_prestamo.errors }}
+          <label for="{{ formulario.fecha_prestamo.id_for_label }}">Fecha prestamo</label>
+          {{ formulario.fecha_prestamo }}
+        </div>
+      </div>
+          <div class="row">
+          <div class="input-field">
+              {{ formulario.fecha_devolucion_prop.errors }}
+              <label for="{{ formulario.fecha_devolucion_prop.id_for_label }}">Fecha devolucion propuesta</label>
+              {{ formulario.fecha_devolucion_prop }}
+          </div>
+          </div>
+          <div class="row">
+          <div class="input-field">
+              {{ formulario.fecha_devolucion_real.errors }}
+              <label for="{{ formulario.fecha_devolucion_real.id_for_label }}">Fecha devolucion real</label>
+              {{ formulario.fecha_devolucion_real }}
+          </div>
+          </div>
+          <div class="row">
+          <div class="">
+              {{ formulario.libro.errors }}
+              <label for="{{ formulario.libro.id_for_label }}">Libros</label>
+              {{ formulario.libro }}
+          </div>
+          </div>
+          <div class="row">
+          <div class="">
+              {{ formulario.usuario.errors }}
+              <label for="{{ formulario.usuario.id_for_label }}">Usuario</label>
+              {{ formulario.usuario }}
+          </div>
+        </div>
+          <center><button class="btn waves-effect waves-light" type="submit">Guardar</button> <a href="/" class="btn waves-effect waves-light">Cancelar</a></center>
+    </form>
+  </div>
+</div>
+{%endblock%}
